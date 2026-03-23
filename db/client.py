@@ -8,7 +8,7 @@ load_dotenv()
 SUPABASE_URL = os.getenv("SUPABASE_PROJECT_URL")
 SUPABASE_SERVICE_KEY = os.getenv("SUPABASE_SERVICE_KEY")
 
-if SUPABASE_SERVICE_KEY == None or SUPABASE_URL == None:
+if SUPABASE_SERVICE_KEY is None or SUPABASE_URL is None:
     raise ValueError("Missing Supabase credentials in .env")
 
 
