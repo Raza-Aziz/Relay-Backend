@@ -1,6 +1,10 @@
 from fastapi import FastAPI
+from fastapi.security import HTTPBearer
 
 from db.client import client
+from routers import auth
+
+security = HTTPBearer()
 
 app = FastAPI()
 
@@ -31,3 +35,6 @@ def check_health():
         return rows
     except Exception as e:
         print(f"An error occurred {e}")
+
+
+app.include_router(auth.router, prefix="/api")
