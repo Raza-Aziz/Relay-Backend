@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.security import HTTPBearer
 
 from db.client import client
-from routers import auth, profile
+from routers import auth, profile, room
 
 security = HTTPBearer()
 
@@ -39,3 +39,4 @@ def check_health():
 
 app.include_router(auth.router, prefix="/api")
 app.include_router(profile.router, prefix="/api/profile")
+app.include_router(room.router, prefix="/api/rooms")
