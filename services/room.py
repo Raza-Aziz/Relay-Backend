@@ -129,3 +129,9 @@ def create_dm_room_service(data: DMCreate, current_user):
     )
 
     return new_dm_room.data[0]
+
+
+def get_my_rooms_service(current_user):
+    client.table("room_member").select("*", "room(*)").eq(
+        "user_id", str(current_user["id"]).eq("room.id", )
+    ).execute()

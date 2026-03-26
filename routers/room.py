@@ -22,3 +22,8 @@ def create_dm_room(
     data: DMCreate, current_user=Depends(get_current_user), token=Depends(security)
 ):
     return create_dm_room_service(data, current_user)
+
+
+@router.get("/")
+def get_my_rooms(current_user=Depends(get_current_user), token=Depends(security)):
+    pass
